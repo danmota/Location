@@ -1,0 +1,62 @@
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\FusedLocationProvider.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\FusedLocationProvider.pdb
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\FusedLocationProvider.FusedLocationProvider.apk
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\FusedLocationProvider.FusedLocationProvider-Signed.apk
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Arch.Core.Common.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Arch.Lifecycle.Common.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Arch.Lifecycle.Runtime.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Annotations.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Compat.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Core.UI.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Core.Utils.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Fragment.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.Media.Compat.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.Android.Support.v4.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.GooglePlayServices.Base.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.GooglePlayServices.Basement.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.GooglePlayServices.Location.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.GooglePlayServices.Maps.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\Xamarin.GooglePlayServices.Tasks.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\FusedLocationProvider.csprojResolveAssemblyReference.cache
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\Xamarin.GooglePlayServices.Basement.dll.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\Xamarin.GooglePlayServices.Tasks.dll.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\Xamarin.GooglePlayServices.Base.dll.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\Xamarin.GooglePlayServices.Location.dll.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\Xamarin.GooglePlayServices.Maps.dll.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\proguard\dc663e480.txt
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\dc663e48.proguard.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\0757626b.proguard.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\2f4d086a.proguard.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\effb2371.proguard.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\XbdMerge\ea5c07c4.proguard.stamp
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\FusedLocationProvider.csproj.CoreCompileInputs.cache
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\FusedLocationProvider.dll
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\FusedLocationProvider.pdb
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\android\bin\FusedLocationProvider.FusedLocationProvider.apk
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\res\layout\main.xml
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\res\values\strings.xml
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\res\drawable\icon.png
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\R.cs.flag
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Release\uploadflags.txt
+C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Release\FusedLocationProvider.dll
+bin\Release\Mono.Android.pdb
+bin\Release\mscorlib.pdb
+bin\Release\System.Core.pdb
+bin\Release\System.pdb
+bin\Release\System.Xml.pdb
+bin\Release\System.Net.Http.pdb
+bin\Release\System.Runtime.Serialization.pdb
+bin\Release\System.ServiceModel.Internals.pdb
+bin\Release\Mono.Security.pdb
+bin\Release\System.ComponentModel.Composition.pdb
+obj\Release\linksrc\FusedLocationProvider.dll.mdb
+obj\Release\linksrc\Mono.Android.pdb
+obj\Release\linksrc\mscorlib.pdb
+obj\Release\linksrc\System.Core.pdb
+obj\Release\linksrc\System.pdb
+obj\Release\linksrc\System.Xml.pdb
+obj\Release\linksrc\System.Net.Http.pdb
+obj\Release\linksrc\System.Runtime.Serialization.pdb
+obj\Release\linksrc\System.ServiceModel.Internals.pdb
+obj\Release\linksrc\Mono.Security.pdb
+obj\Release\linksrc\System.ComponentModel.Composition.pdb
