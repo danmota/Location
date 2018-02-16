@@ -8,10 +8,14 @@ using Android.Util;
 using Android.Widget;
 using Android.Locations;
 using Android.Content;
+using Android.Telephony;
+using System.IO;
+using System.Net;
+using Android.Net;
 
 namespace FusedLocationProvider
 {
-	[Activity (Label = "FusedLocationProvider", MainLauncher = true)]
+	[Activity (Label = "Captura Dinâmica de Posição", MainLauncher = true)]
 	public class MainActivity : Activity, GoogleApiClient.IConnectionCallbacks,
 	    GoogleApiClient.IOnConnectionFailedListener, Android.Gms.Location.ILocationListener 
 	{
@@ -21,15 +25,17 @@ namespace FusedLocationProvider
 		TextView latitude;
 		TextView longitude;
 		TextView provider;
-		Button button2;
-		TextView latitude2;
-		TextView longitude2;
-		TextView provider2;
         TextView txt_counter;
         TextView txt_lastupdate;
+        TextView txt_error;
+
+
+        //https://forums.xamarin.com/discussion/54272/how-to-get-the-imei-number
 
 
         int count = 0;
+
+        //bool upload_active = false;
 
         bool _isGooglePlayServicesInstalled;
 
@@ -50,15 +56,10 @@ namespace FusedLocationProvider
 			longitude = FindViewById<TextView> (Resource.Id.longitude);
 			provider = FindViewById<TextView> (Resource.Id.provider);
 
-			// UI to print location updates
-			button2 = FindViewById<Button> (Resource.Id.myButton2);
-			latitude2 = FindViewById<TextView> (Resource.Id.latitude2);
-			longitude2 = FindViewById<TextView> (Resource.Id.longitude2);
-			provider2 = FindViewById<TextView> (Resource.Id.provider2);
-
             // UI to print status of system
             txt_counter = FindViewById<TextView>(Resource.Id.txt_contador);
             txt_lastupdate = FindViewById<TextView>(Resource.Id.txt_lastupdate);
+            txt_error = FindViewById<TextView>(Resource.Id.txt_error);
 
             _isGooglePlayServicesInstalled = IsGooglePlayServicesInstalled ();
 
@@ -69,10 +70,16 @@ namespace FusedLocationProvider
 
 				// generate a location request that we will pass into a call for location updates
 				locRequest = new LocationRequest ();
+                apiClient.Connect();
+                locRequest.SetFastestInterval(500);
+                locRequest.SetInterval(1000);
+                CountDown();
 
-			} else {
+
+
+            } else {
 				Log.Error ("OnCreate", "Google Play Services is not installed");
-				Toast.MakeText (this, "Google Play Services is not installed", ToastLength.Long).Show ();
+				//Toast.MakeText (this, "Google Play Services is not installed", ToastLength.Long).Show ();
 				Finish ();
 			}
 
@@ -97,6 +104,7 @@ namespace FusedLocationProvider
 			return false;
 		}
 
+        /*
 		protected override void OnResume()
 		{
 			base.OnResume ();
@@ -105,19 +113,37 @@ namespace FusedLocationProvider
 			apiClient.Connect();
 
 			// Clicking the first button will make a one-time call to get the user's last location
-			button.Click += delegate {
+			button.Click += async delegate {
 				if (apiClient.IsConnected)
 				{
 					button.Text = "Iniciar captura de dados";
+                    // Setting location priority to PRIORITY_HIGH_ACCURACY (100)
+                    locRequest.SetPriority(100);
 
-					Location location = LocationServices.FusedLocationApi.GetLastLocation (apiClient);
+                    // Setting interval between updates, in milliseconds
+                    // NOTE: the default FastestInterval is 1 minute. If you want to receive location updates more than 
+                    // once a minute, you _must_ also change the FastestInterval to be less than or equal to your Interval
+                    locRequest.SetFastestInterval(500);
+                    locRequest.SetInterval(1000);
+
+                    Log.Debug("LocationRequest", "Request priority set to status code {0}, interval set to {1} ms",
+                        locRequest.Priority.ToString(), locRequest.Interval.ToString());
+
+                    // pass in a location request and LocationListener
+                    await LocationServices.FusedLocationApi.RequestLocationUpdates(apiClient, locRequest, this);
+                    // In OnLocationChanged (below), we will make calls to update the UI
+                    // with the new location data
+
+
+
+                    Location location = LocationServices.FusedLocationApi.GetLastLocation (apiClient);
 					if (location != null)
 					{
-						latitude.Text = "Latitude: " + location.Latitude.ToString();
-						longitude.Text = "Longitude: " + location.Longitude.ToString();
-						provider.Text = "Provider: " + location.Provider.ToString();
-                        txt_counter.Text = "Number of observations: " + count.ToString();
-                        txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
+						//latitude.Text = "Latitude: " + location.Latitude.ToString();
+						//longitude.Text = "Longitude: " + location.Longitude.ToString();
+						//provider.Text = "Provider: " + location.Provider.ToString();
+      //                  txt_counter.Text = "Number of observations: " + count.ToString();
+      //                  txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
                         Log.Debug ("LocationClient", "Last location printed");
                         SavetoSd(location.Latitude.ToString(), location.Longitude.ToString());
                         CountDown();
@@ -131,48 +157,62 @@ namespace FusedLocationProvider
 			};
 
 			// Clicking the second button will send a request for continuous updates
-			button2.Click += async delegate {
-				if (apiClient.IsConnected)
-				{
-					button2.Text = "Consultando posição inicial";
-
-					// Setting location priority to PRIORITY_HIGH_ACCURACY (100)
-					locRequest.SetPriority(100);
-
-					// Setting interval between updates, in milliseconds
-					// NOTE: the default FastestInterval is 1 minute. If you want to receive location updates more than 
-					// once a minute, you _must_ also change the FastestInterval to be less than or equal to your Interval
-					locRequest.SetFastestInterval(500);
-					locRequest.SetInterval(1000);
-
-					Log.Debug("LocationRequest", "Request priority set to status code {0}, interval set to {1} ms", 
-						locRequest.Priority.ToString(), locRequest.Interval.ToString());
-
-					// pass in a location request and LocationListener
-					await LocationServices.FusedLocationApi.RequestLocationUpdates (apiClient, locRequest, this);
-					// In OnLocationChanged (below), we will make calls to update the UI
-					// with the new location data
-				}
-				else
-				{
-					Log.Info("LocationClient", "Please wait for Client to connect");
-				}
-			};
 		}
-
-		protected override async void OnPause ()
+        */
+        /*
+		protected override void OnPause ()
 		{
 			base.OnPause ();
 			Log.Debug ("OnPause", "OnPause called, stopping location updates");
 
-			if (apiClient.IsConnected) {
-				// stop location updates, passing in the LocationListener
-				await LocationServices.FusedLocationApi.RemoveLocationUpdates (apiClient, this);
+            apiClient.Connect();
 
-				apiClient.Disconnect ();
-			}
-		}
+            // Clicking the first button will make a one-time call to get the user's last location
+            button.Click += async delegate {
+                if (apiClient.IsConnected)
+                {
+                    button.Text = "Iniciar captura de dados";
+                    // Setting location priority to PRIORITY_HIGH_ACCURACY (100)
+                    locRequest.SetPriority(100);
 
+                    // Setting interval between updates, in milliseconds
+                    // NOTE: the default FastestInterval is 1 minute. If you want to receive location updates more than 
+                    // once a minute, you _must_ also change the FastestInterval to be less than or equal to your Interval
+                    locRequest.SetFastestInterval(500);
+                    locRequest.SetInterval(1000);
+
+                    Log.Debug("LocationRequest", "Request priority set to status code {0}, interval set to {1} ms",
+                        locRequest.Priority.ToString(), locRequest.Interval.ToString());
+
+                    // pass in a location request and LocationListener
+                    await LocationServices.FusedLocationApi.RequestLocationUpdates(apiClient, locRequest, this);
+                    // In OnLocationChanged (below), we will make calls to update the UI
+                    // with the new location data
+
+
+
+                    Location location = LocationServices.FusedLocationApi.GetLastLocation(apiClient);
+                    if (location != null)
+                    {
+                        //latitude.Text = "Latitude: " + location.Latitude.ToString();
+                        //longitude.Text = "Longitude: " + location.Longitude.ToString();
+                        //provider.Text = "Provider: " + location.Provider.ToString();
+                        //txt_counter.Text = "Number of observations: " + count.ToString();
+                        //txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
+                        Log.Debug("LocationClient", "Last location printed");
+                        SavetoSd(location.Latitude.ToString(), location.Longitude.ToString());
+                        CountDown();
+
+                    }
+                }
+                else
+                {
+                    Log.Info("LocationClient", "Please wait for client to connect");
+                }
+            };
+
+        }
+        */
 
 		////Interface methods
 
@@ -191,7 +231,9 @@ namespace FusedLocationProvider
 
 			// You must implement this to implement the IGooglePlayServicesClientConnectionCallbacks Interface
 			Log.Info("LocationClient", "Now disconnected from client");
-		}
+            txt_error.Text = "Erro foi desconectado";
+            //Toast.MakeText(ApplicationContext, "Now disconnected from client", ToastLength.Long).Show();
+        }
 
 		public void OnConnectionFailed (ConnectionResult bundle)
 		{
@@ -200,7 +242,9 @@ namespace FusedLocationProvider
 
 			// You must implement this to implement the IGooglePlayServicesClientOnConnectionFailedListener Interface
 			Log.Info("LocationClient", "Connection failed, attempting to reach google play services");
-		}
+            txt_error.Text = "Erro conexão Falhou";
+            //Toast.MakeText(ApplicationContext, "Connection failed, attempting to reach google play services", ToastLength.Long).Show();
+        }
 
 		public void OnLocationChanged (Location location)
 		{
@@ -208,18 +252,12 @@ namespace FusedLocationProvider
 			 
 			// You must implement this to implement the Android.Gms.Locations.ILocationListener Interface
 			Log.Debug ("LocationClient", "Location updated");
-
-			latitude2.Text = "Latitude: " + location.Latitude.ToString();
-			longitude2.Text = "Longitude: " + location.Longitude.ToString();
-			provider2.Text = "Provider: " + location.Provider.ToString();
-            txt_counter.Text = "Number of observations: " + count.ToString();
-            txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
         }
 
 		public void OnConnectionSuspended (int i)
 		{
-			
-		}
+            txt_error.Text = "Erro conexão Suspensa";
+        }
 
         private void CountDown ()
             {
@@ -231,38 +269,80 @@ namespace FusedLocationProvider
 
             }
 
-            private void OnTimedEvent(object sender, System.Timers.ElapsedEventArgs e)
+        private void OnTimedEvent(object sender, System.Timers.ElapsedEventArgs e)
             {
                 if (apiClient.IsConnected)
                 {
                     button.Text = "Iniciar captura de dados";
 
+
                     Location location = LocationServices.FusedLocationApi.GetLastLocation(apiClient);
                     if (location != null)
                     {
-                        latitude.Text = "Latitude: " + location.Latitude.ToString();
-                        longitude.Text = "Longitude: " + location.Longitude.ToString();
-                        provider.Text = "Provider: " + location.Provider.ToString();
-                        txt_counter.Text = "Number of observations: " + count.ToString();
-                        txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
-                        count++;
                         Log.Debug("LocationClient", "Last location printed");
-                        SavetoSd(location.Latitude.ToString(), location.Longitude.ToString());
+
+                        //Bouding Box - America Latina
+                        double[] bbox = new double[] { -86.4, -58.9, -24.1, 14.7 };
+                        //Bouding Box - IMT
+                        //double[] bbox = new double[] { -46.5786105034, -23.6509426581, -46.569802129, -23.6450262594 };
+                        //Bouding Box - Casa
+                        //double[] bbox = new double[] { -46.6534387705,-23.6000745207,-46.6446303961,-23.5941558242 };
+
+                        if (location.Latitude >= bbox[1]) //Esquerda
+                        {
+                            if (location.Latitude <= bbox[3]) //Direita
+                            {
+                                if (location.Longitude >= bbox[0]) //Topo
+                                {
+                                    if (location.Longitude <= bbox[2]) //Baixo
+                                    {
+                                        Update_screen(location);
+                                        SavetoSd(location.Latitude.ToString(), location.Longitude.ToString());
+                                } else
+                                    {
+                                        Log.Debug("LocationClient", "Out of Bouding Box");
+                                        //Toast.MakeText(ApplicationContext, "Out of Bouding Box", ToastLength.Long).Show();
+
+                                }
+
+                                }
+                            }
+                        }
+
+                        
                     }
                 }
                 else
                 {
+                    // pass in the Context, ConnectionListener and ConnectionFailedListener
+                    apiClient = new GoogleApiClient.Builder(this, this, this)
+                        .AddApi(LocationServices.API).Build();
+
+                    // generate a location request that we will pass into a call for location updates
+                    locRequest = new LocationRequest();
+                    apiClient.Connect();
+                    locRequest.SetFastestInterval(500);
+                    locRequest.SetInterval(1000);
+
                     Log.Info("LocationClient", "Please wait for client to connect");
+                    txt_error.Text = "Erro conexão API Google";
                 }
 
-        }
+            }
 
         private void SavetoSd(String lat, String lon)
         {
-            
+
+            //Get IMEI
+            var telephonyManager = (TelephonyManager)GetSystemService(TelephonyService);
+            var id = telephonyManager.DeviceId;
+
+
             var sdCardPath = Android.OS.Environment.ExternalStorageDirectory.Path;
-            var filePath = System.IO.Path.Combine(sdCardPath, "iootext.txt");
-            Log.Debug(filePath, "");
+            sdCardPath += "/Download";
+            //var filePath = System.IO.Path.Combine(sdCardPath, DateTime.Now.ToString("yyyy-MM-dd_HH:mm") + "_" + id.ToString() + "_monioring.txt");
+            var filePath = System.IO.Path.Combine(sdCardPath, DateTime.Now.ToString("yyyy-MM-dd_HH") + "_" + id.ToString() + "_monioring.txt");
+            //Log.Debug(filePath, "");
 
             var filter = new IntentFilter(Intent.ActionBatteryChanged);
             var battery = RegisterReceiver(null, filter);
@@ -270,19 +350,94 @@ namespace FusedLocationProvider
             int scale = battery.GetIntExtra(BatteryManager.ExtraScale, -1);
 
             int level_0_to_100 = (int)Math.Floor(level*100D/ scale);
-            Log.Debug("Battery Level: "+level_0_to_100.ToString(), "");
+            //Log.Debug("Battery Level: "+level_0_to_100.ToString(), "");
+
+
+
 
 
             //           if (!System.IO.File.Exists(filePath))
             //           {
             using (System.IO.StreamWriter write = new System.IO.StreamWriter(filePath, true))
                 {
-                    write.Write(DateTime.Now.ToString()+","+level_0_to_100.ToString()+","+lat+","+lon+"\n");
+                var list = Directory.GetFiles(sdCardPath, "*.txt");
+
+                write.Write(DateTime.Now.ToString()+";"+id.ToString()+";"+level_0_to_100.ToString()+";"+lat+";"+lon+"\n");
+                write.Dispose();
+                count++;
+
+                ConnectivityManager connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+                NetworkInfo networkInfo = connectivityManager.ActiveNetworkInfo;
+
+                if (networkInfo != null)
+                {
+                    bool isOnline = networkInfo.IsConnected;
+
+                    bool isWifi = networkInfo.Type == ConnectivityType.Wifi;
+                    if (isWifi)
+                    {
+                        Log.Debug("", "Wifi connected.");
+
+                        if (list.Length > 1)
+                        {
+                            for (int i = 0; i < list.Length; i++)
+                            {
+                                if (list[i].ToString() != filePath)
+                                {
+
+                                    string source = list[i];
+                                    string destination = @"/srv/shiny-server/bases de dados/Mobile";
+                                    string host = "186.201.214.56";
+                                    string username = "lcv";
+                                    string password = "15u3@dsf";
+                                    int port = 22;  //Port 22 is defaulted for SFTP upload
+
+                                    try
+                                    {
+                                        SFTP.UploadSFTPFile(host, username, password, source, destination, port);
+                                        File.Delete(list[i]);
+                                    }
+                                    catch
+                                    {
+                                        Log.Debug("Upload not complete!", "");
+                                        //Toast.MakeText(ApplicationContext, "WiFi OK - Upload Failed!", ToastLength.Long).Show();
+                                    }
+                                }
+                            }
+
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        Log.Debug("", "Wifi disconnected.");
+                        txt_error.Text = "Erro WiFi desconectado";
+                    }
                 }
+
+
+
+                
+
+
+
+            }
  //           }
 
         }
 
+        private void Update_screen(Location location)
+        {
+            latitude.Text = "Latitude: " + location.Latitude.ToString();
+            longitude.Text = "Longitude: " + location.Longitude.ToString();
+            provider.Text = "Provider: " + location.Provider.ToString();
+            txt_counter.Text = "Number of observations: " + count.ToString();
+            txt_lastupdate.Text = "Last observation: " + DateTime.Now.ToString();
+            count++;
+        }
+      
     }
 }
 

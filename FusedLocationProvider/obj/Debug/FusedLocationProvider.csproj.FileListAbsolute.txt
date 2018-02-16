@@ -34,7 +34,48 @@ C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\D
 C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Debug\uploadflags.txt
 C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.dll.mdb
 C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\obj\Debug\android\assets\FusedLocationProvider.dll.mdb
-C:\Users\Daniel Mota\Downloads\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.pdb
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.FusedLocationProvider.apk
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.FusedLocationProvider-Signed.apk
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Arch.Core.Common.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Arch.Lifecycle.Common.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Arch.Lifecycle.Runtime.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Annotations.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Compat.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Core.UI.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Core.Utils.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Fragment.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.Media.Compat.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.Android.Support.v4.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.GooglePlayServices.Base.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.GooglePlayServices.Basement.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.GooglePlayServices.Location.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.GooglePlayServices.Maps.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Xamarin.GooglePlayServices.Tasks.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\FusedLocationProvider.csprojResolveAssemblyReference.cache
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Basement.dll.stamp
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Tasks.dll.stamp
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Base.dll.stamp
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Location.dll.stamp
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\XbdMerge\Xamarin.GooglePlayServices.Maps.dll.stamp
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\FusedLocationProvider.csproj.CoreCompileInputs.cache
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\FusedLocationProvider.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\FusedLocationProvider.pdb
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\android\bin\FusedLocationProvider.FusedLocationProvider.apk
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\res\layout\main.xml
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\res\values\strings.xml
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\res\drawable\icon.png
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\R.cs.flag
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\uploadflags.txt
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.dll.mdb
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\obj\Debug\android\assets\FusedLocationProvider.dll.mdb
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Renci.SshNet.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\SshNet.Security.Cryptography.dll
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\Renci.SshNet.xml
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\SshNet.Security.Cryptography.xml
+C:\Users\Daniel Mota\Documents\GitHub\FusedLocationProvider\FusedLocationProvider\bin\Debug\FusedLocationProvider.dll
+bin\Debug\Microsoft.CSharp.pdb
 bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb
 bin\Debug\System.Core.pdb
@@ -46,6 +87,7 @@ bin\Debug\System.ServiceModel.Internals.pdb
 bin\Debug\Mono.Security.pdb
 bin\Debug\System.ComponentModel.Composition.pdb
 obj\Debug\linksrc\FusedLocationProvider.dll.mdb
+obj\Debug\linksrc\Microsoft.CSharp.pdb
 obj\Debug\linksrc\Mono.Android.pdb
 obj\Debug\linksrc\mscorlib.pdb
 obj\Debug\linksrc\System.Core.pdb

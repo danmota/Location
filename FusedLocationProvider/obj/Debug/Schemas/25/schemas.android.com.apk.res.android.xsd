@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>25/01/2018 05:06:59 PM</xs:documentation>
+    <xs:documentation>10/02/2018 10:22:28 AM</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -19676,19 +19676,15 @@
             <xs:enumeration value="@id/icon_group" />
             <xs:enumeration value="@id/info" />
             <xs:enumeration value="@id/latitude" />
-            <xs:enumeration value="@id/latitude2" />
             <xs:enumeration value="@id/line1" />
             <xs:enumeration value="@id/line3" />
             <xs:enumeration value="@id/longitude" />
-            <xs:enumeration value="@id/longitude2" />
             <xs:enumeration value="@id/media_actions" />
             <xs:enumeration value="@id/myButton" />
-            <xs:enumeration value="@id/myButton2" />
             <xs:enumeration value="@id/notification_background" />
             <xs:enumeration value="@id/notification_main_column" />
             <xs:enumeration value="@id/notification_main_column_container" />
             <xs:enumeration value="@id/provider" />
-            <xs:enumeration value="@id/provider2" />
             <xs:enumeration value="@id/right_icon" />
             <xs:enumeration value="@id/right_side" />
             <xs:enumeration value="@id/status_bar_latest_event_content" />

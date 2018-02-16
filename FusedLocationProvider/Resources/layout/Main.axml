@@ -4,26 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <Button
-        android:text="Consultando posição inicial"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/myButton2" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/latitude2" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/longitude2" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/provider2" />
-    <Button
         android:id="@+id/myButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -51,4 +31,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_lastupdate" />
+    <TextView
+        android:text="Normal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_error"
+        android:textAlignment="center" />
 </LinearLayout>

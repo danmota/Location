@@ -107,6 +107,8 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "FusedLocationProvider.dll" comes first in this list. */
 		"FusedLocationProvider.dll",
+		"Renci.SshNet.dll",
+		"SshNet.Security.Cryptography.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
 		"Xamarin.Android.Arch.Lifecycle.Runtime.dll",

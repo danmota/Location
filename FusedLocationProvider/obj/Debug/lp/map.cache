@@ -14,3 +14,5 @@ Xamarin.GooglePlayServices.Basement
 Xamarin.GooglePlayServices.Location
 Xamarin.GooglePlayServices.Maps
 Xamarin.GooglePlayServices.Tasks
+Renci.SshNet
+SshNet.Security.Cryptography
